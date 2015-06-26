@@ -1,0 +1,327 @@
+/* Page styles 
+================================*/
+
+body {
+	font: normal 1.1em/1.5 sans-serif;
+	color: #222;
+	background-image:url('img/fundal.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+}
+
+html,
+body,
+.main-wrapper,
+.col {
+	height: 100%;
+} 
+
+* {
+	box-sizing: border-box;
+}
+
+/* Layout Element Colors 
+================================*/
+
+.main-nav .main-logo a {background-color:#5fcf80; }
+.main-nav a  { background: rgba(192, 192, 192, 0.5); }
+
+/* Header, Banner and Footer Layout
+========================================*/
+.logo {
+	width: 50px;
+	height: 50px;
+	background-color: #5fcf80;
+	margin: 0 auto;
+	background: url('img/logo32.png') no-repeat left top;
+	
+}
+
+.logo:hover {
+	background-position: -50px 0px;
+}
+
+.main-header {
+	padding: 20px;
+	width: 100%; /* de aici am adaugat - inainte era bine*/
+	min-height: 120px;
+	text-align: center;
+}
+
+.main-banner {
+	text-align: center;
+	padding: 35px 15px;
+}
+
+.main-logo a,
+.main-nav a {
+	color: white;
+	text-decoration: none;
+	display: block; /*increases the hover area*/
+	text-align: center;
+	padding: 5px 15px;
+	border-radius: 5px;
+	position: relative;
+	overflow: hidden;
+}
+
+.main-logo:first-child {
+	-webkit-flex-grow: 1.5;
+	flex-grow: 1.5;
+}
+
+.main-nav a::before {
+	font-family: 'icomoon';
+	content: attr(data-icon);
+	color: #fff;
+	position: absolute;
+	top: 6px;
+	left:-30%;
+	transition: .4s;
+}
+
+.main-nav a:hover::before {
+	left: 10%;
+}
+
+.main-nav li {
+	-webkit-align-self: center;
+	align-self: center;
+	flex-grow: 1;
+	-webkit-flex-grow: 1;
+	margin-right: 8px;
+	margin-left: 8px;
+	transition: .5s;
+}
+
+.main-nav li:hover:not(.main-logo) {
+	flex-grow: 2;
+}
+
+.main-logo,
+.main-nav li {
+	border-radius: 5px;
+}
+
+.main-nav {
+	display:-webkit-flex;
+	display: flex;
+	height: 100%;
+}
+
+.main-nav li {
+	align-self: center;
+}
+
+.main-footer {
+	text-align: center;
+	margin-top: 50px;
+	padding: 20px;
+}
+
+.social-icon {
+	width: 30px;
+	height: 30px;
+	margin-top: -10px;
+}
+
+
+.copyright {
+	font-size: 12px;
+	margin-top: 10px;
+}
+
+#title {
+	height: 170px;
+	text-align: center;
+}
+
+#title p {
+	margin-top: -5px;
+	font-size: 12px;
+	padding-bottom: 2px;
+}
+
+#title h1 {
+	font-size: 26px;
+	font-weight: bold;
+}
+
+#wrapper {
+  max-width: 940px;
+  margin: 0 auto;
+  padding: 0 5%;
+}  
+
+.contact-info {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size:0.9em;
+
+}
+
+.contact-info li {
+	font-size: 12px;
+}
+.contact-info a {
+  display: block;
+  min-height: 20px;
+  background-repeat: no-repeat;
+  background-size: 20px 20px;
+  padding: 0 0 0 30px;
+  margin: 0 0 10px;
+  font-size: 12px;
+  text-decoration: none;
+  color: #000;
+}
+
+#primary p {
+  font-size: 14px;
+}
+
+#primary {
+	text-align: center;
+}
+
+.contact-info li.phone a {
+  background-image: url('img/phone.png');
+}
+
+.contact-info li.mail a {
+  background-image: url('img/mail.png');
+}
+
+.contact-info li.twitter a {
+  background-image: url('img/twitter.png');
+}
+
+
+
+/* Class "selected"
+========================================*/
+
+li.selected {
+    background-color: hsla(0, 0%, 20%, 0.9);
+}
+
+/* Tooltip style
+========================================*/
+
+/* about me tooltip2 - coffee-pot */
+
+[data-tooltip] {
+  position: relative;
+  z-index: 2;
+  cursor: pointer;
+}
+
+/* Hide the tooltip content by default */
+[data-tooltip]:before,
+[data-tooltip]:after {
+  visibility: hidden;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Position tooltip above the element */
+[data-tooltip]:before {
+  position: absolute;
+ /* bottom: 150%;*/
+  left: 50%;
+ /* margin-bottom: 5px;*/
+  margin-top: 5px;
+  margin-left: 41px;
+  padding: 7px;
+  width: 150px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background-color: #000;
+  background-color: hsla(0, 0%, 20%, 0.6);
+  color: #fff;
+  content: attr(data-tooltip);
+  text-align: left;
+  font-size: 12.5px;
+  line-height: 1.5;
+}
+
+/* Triangle hack to make tooltip look like a speech bubble */
+[data-tooltip]:after {
+  position: absolute;
+  /*bottom: 150%;*/
+ /* left: 50%;*/
+  margin-top: -30px;
+  margin-left: 36px;
+  width: 0;
+  border-bottom: 5px solid transparent;  /* left arrow slant */
+  border-top: 5px solid transparent; /* right arrow slant */
+  border-right: 5px solid hsla(0, 0%, 20%, 0.6); /* bottom, add background color here*/
+  content: " ";
+  font-size: 0;
+  line-height: 0;
+}
+
+/* Show tooltip content on hover */
+[data-tooltip]:hover:before,
+[data-tooltip]:hover:after {
+  visibility: visible;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+  filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
+}
+/* Icon Fonts
+========================================*/
+
+@font-face {
+	font-family: 'icomoon';
+	src:url('fonts/icomoon.eot');
+	src:url('fonts/icomoon.eot?#iefix') format('embedded-opentype'),
+		url('fonts/icomoon.woff') format('woff'),
+		url('fonts/icomoon.ttf') format('truetype'),
+		url('fonts/icomoon.svg#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+
+
+/* Media Queries
+========================================*/  
+
+@media (max-width: 768px) {
+	.main-logo,
+	.main-nav,
+	.main-nav li,
+	.col {
+		display: block;
+		height: initial;
+		width: initial;
+		margin: initial;
+	}
+	.main-nav {
+		padding-left: initial;
+	}
+	.main-nav li {
+		margin-top: 15px;
+	}
+	.main-banner {
+		display: none; /*pot sa il comentez daca vreau sa nu dispara*/
+	}
+	.main-nav {
+	overflow: hidden;
+	clear:left;
+    }
+}
+
+@media screen and (min-width: 1100px) {
+
+	.main-wrapper {
+	    max-width: 1200px;
+	    margin: 0 auto;
+	}	
+}

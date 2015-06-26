@@ -1,0 +1,474 @@
+/* Page styles 
+================================*/
+
+body {
+	font: normal 1.1em/1.5 sans-serif;
+	color: #222;
+	background-image:url('img/fundal.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+}
+
+
+body,
+.main-wrapper {
+	min-width: 300px;
+}
+
+* {
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+/* Layout Element Colors 
+================================*/
+
+.main-nav .main-logo a {background-color:#5fcf80; }
+.main-nav a  { background: rgba(192, 192, 192, 0.5); }
+
+/* Header, Banner and Footer Layout
+========================================*/
+.logo {
+  	width: 50px;
+  	height: 50px;
+  	background-color: #5fcf80;
+  	margin-top: 19px;
+  	background: url('img/logo32.png') no-repeat left top;
+  	overflow: hidden;
+  	text-align: center;
+  	margin: 0 auto;
+  	z-index: 2;
+}
+
+.logo:hover {
+	background-position: -50px 0px;
+}
+
+.main-header {
+	padding: 20px;
+	width: 100%; /* de aici am adaugat - inainte era bine*/
+	min-height: 120px;
+	text-align: center;
+}
+
+.main-banner {
+	text-align: center;
+	padding: 35px 15px;
+}
+
+.main-logo a,
+.main-nav a {
+	color: white;
+	text-decoration: none;
+	display: block; /*increases the hover area*/
+	text-align: center;
+	padding: 5px 15px;
+	border-radius: 5px;
+	position: relative;
+	overflow: hidden;
+}
+
+
+.main-logo:first-child {
+	-webkit-flex-grow: 1.5;
+	-moz-box-flex-grow: 1.5;
+	flex-grow: 1.5;
+}
+
+.main-nav a::before {
+	font-family: 'icomoon';
+	content: attr(data-icon);
+	color: #fff;
+	position: absolute;
+	top: 6px;
+	left:-30%;
+	transition: .4s;
+}
+
+.main-nav a:hover::before {
+	left: 10%;
+}
+
+.main-nav li {
+	-webkit-align-self: center;
+	-moz-box-flex-align-self: center;
+	align-self: center;
+	flex-grow: 1;
+	-moz-box-grow: 1;
+	-webkit-flex-grow: 1;
+	margin-right: 8px;
+	margin-left: 8px;
+	transition: .5s;
+}
+
+.main-nav li:hover:not(.main-logo) {
+	flex-grow: 2;
+}
+
+.main-logo,
+.main-nav li {
+	border-radius: 5px;
+}
+
+.main-nav {
+	display:-webkit-flex;
+	display: flex;
+	height: 100%;
+}
+
+.main-nav li {
+	align-self: center;
+}
+
+.main-footer {
+	text-align: center;
+  	margin-top: -7%;
+  	width: 100%;
+  	float: left;
+}
+
+.social-icon {
+	width: 30px;
+	height: 30px;
+	margin-top: -10px;
+}
+
+
+.copyright {
+	font-size: 11px;
+	margin-top: -1px;
+}
+
+section {
+	text-align: center;
+}
+
+
+
+/* Column Layout
+========================================*/
+
+.col {
+	float: left;
+	vertical-align: center;
+}
+
+
+.primary-content,
+.secondary-content,
+.third-content,
+.forth-content {
+width: 50%;
+min-height: 250px;
+}
+
+
+.row {
+	width: 100%;
+	float: left;
+	text-align: center;
+	font-size: 12px;
+  	font-family: "Helvetica Neue", "Gotham Rounded A", "Gotham Rounded B", "Helvetica", "Arial", sans-serif;
+}
+
+
+
+/* Objects
+========================================*/
+
+.coffee-cup {
+	margin: 0 auto;
+	margin-left: 10%;
+	margin-top: 6%;
+  	background: url('img/coffee-cup.png') no-repeat center;
+  	background-size: 39% auto;
+	width: 90%;
+	height: 240px;
+}
+
+.tea-pot {
+	margin-left: 5%;
+  	margin-top: 7.5%;
+  	background: url('img/coffee-pot.png') no-repeat center;
+  	background-size: 66% auto;
+	width: 90%;
+	height: 200px;
+}
+
+.suculent {
+  margin-left: 20%;
+  margin-top: -6%;
+  background: url('img/suculent.png') no-repeat center;
+  background-size: 60% auto;
+  width: 90%;
+  height: 220px;
+}
+
+.pencil {
+	margin-left: 3%;
+    margin-top: -13%;
+  	background: url('img/pencil.png') no-repeat center;
+  	background-size: 10% auto;
+	width: 90%;
+	height: 310px;
+}
+
+/* Selected Class
+========================================*/
+
+
+li.selected {
+    background-color: hsla(0, 0%, 20%, 0.9);
+}
+
+/* Icon Fonts
+========================================*/
+
+@font-face {
+	font-family: 'icomoon';
+	src:url('fonts/icomoon.eot');
+	src:url('fonts/icomoon.eot?#iefix') format('embedded-opentype'),
+		url('fonts/icomoon.woff') format('woff'),
+		url('fonts/icomoon.ttf') format('truetype'),
+		url('fonts/icomoon.svg#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+/* Media Queries
+========================================*/
+
+
+
+@media screen and (min-width: 480px) {
+     
+}
+
+@media (max-width: 768px) {
+	.main-logo,
+	.main-nav,
+	.main-nav li,
+	.col {
+		display: block;
+		height: initial;
+		width: initial;
+		margin: initial;
+	}
+	.main-nav {
+		padding-left: initial;
+	}
+	.main-nav li {
+		margin-top: 15px;
+	}
+	.main-banner {
+		display: none; /*pot sa il comentez daca vreau sa nu dispara*/
+	}
+	.main-nav {
+	overflow: hidden;
+	clear:left;
+    }
+    .logo {
+    	float: none;
+    	margin: 0 auto;
+    	margin-top:  5%;
+    }
+    
+    .primary-content,
+	.secondary-content,
+	.third-content,
+	.forth-content {
+		width: 50%;
+		min-height: 250px;
+    }
+
+	.row {
+		width: 100%;
+		float: left;
+	}
+
+	.tea-pot {
+		margin-top: 19%;
+		margin-left: 9%;
+	  	background-size: 86% auto;
+	  	height: 150px;
+	}
+
+	.coffee-cup {
+		margin-top: 19%;
+		margin-left: 7%;
+	  	background-size: 52% auto;
+	  	height: 155px;
+	}
+
+	.suculent {
+	    margin-left: 21%;
+	    margin-top: 19%;
+	    background-size: 88% auto;
+	    height: 150px;
+	}
+
+	.pencil {
+  		margin-top: -3%;
+  		background-size: 17% auto;
+  		height: 260px;
+	}
+
+	.main-footer {
+  	margin-top: 5%;
+    }
+}
+
+@media screen and (max-width: 400px) {
+
+    .primary-content,
+	.secondary-content,
+	.third-content,
+	.forth-content {
+		width: 100%;
+		min-height: 250px;
+    }
+
+	.row {
+		width: 100%;
+		float: left;
+	}
+
+	.secondary-content,
+	.forth-content {
+		display: none;
+	}
+
+	.coffee-cup {
+	   margin-top: -8%;
+	   background-size: 49% auto;
+	}
+
+	.suculent {
+		margin-left: 14%;
+		margin-top: -4%;
+		background-size: 81% auto;
+	}
+}
+
+
+
+@media screen and (max-width: 400px) and (max-width: 500px) {
+
+
+	.primary-content,
+	.secondary-content,
+	.third-content,
+	.forth-content {
+		width: 100%;
+		min-height: 250px;
+    }
+
+	.row {
+		width: 100%;
+		float: left;
+	}
+
+	.coffee-cup {
+  	margin-top: -1%;
+ 	background-size: 40% auto;
+	}
+
+	.tea-pot {
+  	margin-top: -5%;
+  	margin-left: 7%;
+  	background-size: 68% auto;
+	}
+
+	.suculent {
+  	margin-left: 13%;
+ 	margin-top: 1%;
+  	background-size: 71% auto;
+	}
+
+	.pencil {
+  	margin-top: -6%;
+  	background-size: 12% auto;
+	}
+
+	.main-footer {
+  	margin-top: 6%;
+	}
+}
+
+@media screen and (min-width: 580px) {
+    .suculent {
+    	height: 180px;
+    } 
+}
+
+@media screen and (min-width: 1020px) {
+    .suculent {
+    	height: 220px;
+    } 
+}
+
+@media screen and (min-width: 1260px) {
+    .suculent {
+    	height: 240px;
+    } 
+
+    .pencil {
+    	background-size: 10% auto;
+    }
+}
+
+
+@media screen and (min-width: 700px) and (max-width: 790px) {
+    .coffee-cup {
+    	margin-top: 13%;
+    	height: 170px;
+    }
+
+    .tea-pot {
+    	margin-top: 13.5%;
+    	height: 160px;
+    }
+
+    .pencil {
+    	margin-top: -22%;
+    	height: 270px;
+    }
+
+    .suculent {
+    	margin-left: 19%;
+ 		margin-top: -11%;
+    }
+}
+
+
+@media screen and (min-width: 715px) and (max-width: 800px) {
+	.coffee-cup {
+    	margin-top: 11%;
+    	height: 180px;
+    }
+
+    .tea-pot {
+    	margin-top: 10.5%;
+    	height: 180px;
+    }
+
+    .pencil {
+    	margin-top: -13%;
+    	height: 270px;
+    }
+
+    .suculent {
+    	margin-left: 19%;
+ 		margin-top: -11%;
+    }
+}
+
+@media screen and (min-width: 1100px) {
+
+	.main-wrapper {
+	    max-width: 1200px;
+	    margin: 0 auto;
+	}	
+}
