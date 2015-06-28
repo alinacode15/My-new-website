@@ -197,7 +197,10 @@ body,
   background-image: url('img/twitter.png');
 }
 
-
+.git {
+	text-decoration: underline;
+	color: #222;
+}
 
 /* Class "selected"
 ========================================*/
